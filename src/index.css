@@ -1,0 +1,34 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --color-bg: #f8fafc;
+    --color-text: #0f172a;
+    --color-primary: #3b82f6; /* Blue 500 */
+    --color-secondary: #64748b; /* Slate 500 */
+    --color-accent: #2563eb; /* Blue 600 */
+    --color-card: #ffffff;
+    --color-card-border: #e2e8f0;
+  }
+
+  .dark {
+    --color-bg: #0f172a; /* Slate 900 */
+    --color-text: #f8fafc; /* Slate 50 */
+    --color-primary: #3b82f6;
+    --color-secondary: #94a3b8; /* Slate 400 */
+    --color-accent: #60a5fa; /* Blue 400 */
+    --color-card: #1e293b; /* Slate 800 */
+    --color-card-border: #334155;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
