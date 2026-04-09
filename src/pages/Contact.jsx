@@ -37,7 +37,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-lg text-secondary max-w-2xl mx-auto md:mx-0">
-            Have a project in mind or want to explore potential opportunities? 
+            Have a project in mind or want to explore potential opportunities?
             I'm currently open to new roles in Backend Development. Let's connect!
           </p>
         </div>
@@ -68,25 +68,25 @@ const Contact = () => {
             <div className="pt-8 border-t border-card-border">
               <h3 className="text-lg font-semibold text-foreground mb-4">Social Profiles</h3>
               <div className="flex space-x-4">
-                <a 
-                  href={links.github} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={links.github}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center p-3 rounded-full bg-card border border-card-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 text-secondary"
                   aria-label="GitHub"
                 >
                   <FaGithub size={22} />
                 </a>
-                <a 
-                  href={links.linkedin} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={links.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center p-3 rounded-full bg-card border border-card-border hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 text-secondary"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin size={22} />
                 </a>
-                <a 
+                {/* <a 
                   href={links.portfolio} 
                   target="_blank" 
                   rel="noreferrer" 
@@ -94,7 +94,7 @@ const Contact = () => {
                   aria-label="Portfolio"
                 >
                   <ExternalLink size={22} />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
