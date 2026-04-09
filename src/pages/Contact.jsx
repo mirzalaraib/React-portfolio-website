@@ -32,8 +32,8 @@ const Contact = () => {
     <AnimatedPage>
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center md:justify-start">
-            <span className="hidden md:block w-8 h-1 bg-primary mr-4 rounded-full"></span>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6 flex items-center justify-center md:justify-start">
+            <span className="hidden md:block w-12 h-1 bg-gradient-to-r from-primary to-accent mr-4 rounded-full"></span>
             Get In Touch
           </h2>
           <p className="text-lg text-secondary max-w-2xl mx-auto md:mx-0">
@@ -48,11 +48,11 @@ const Contact = () => {
             <div className="space-y-6">
               {contactMethods.map((method, idx) => (
                 <div key={idx} className="flex items-start">
-                  <div className="p-4 bg-primary/10 rounded-2xl mr-4 shrink-0">
+                  <div className="p-4 bg-primary/10 rounded-2xl mr-4 shrink-0 shadow-[0_0_15px_rgba(var(--color-primary-rgb),0.15)] group-hover:shadow-[0_0_20px_rgba(var(--color-primary-rgb),0.3)] transition-all">
                     {method.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1">{method.title}</h3>
+                    <h3 className="text-lg font-display font-semibold text-foreground mb-1">{method.title}</h3>
                     {method.link ? (
                       <a href={method.link} className="text-secondary hover:text-primary transition-colors">
                         {method.value}

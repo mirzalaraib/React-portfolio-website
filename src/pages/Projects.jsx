@@ -8,9 +8,9 @@ const Projects = () => {
   return (
     <AnimatedPage>
       <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center">
-            <span className="w-8 h-1 bg-primary mr-4 rounded-full"></span>
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6 flex items-center">
+            <span className="w-12 h-1 bg-gradient-to-r from-primary to-accent mr-4 rounded-full"></span>
             Featured Projects
           </h2>
           <p className="text-lg text-secondary max-w-2xl">

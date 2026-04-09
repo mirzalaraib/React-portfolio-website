@@ -27,7 +27,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-card border border-card-border rounded-2xl p-8 shadow-sm">
+    <div className="bg-card/80 backdrop-blur-md border border-card-border rounded-3xl p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
       {isSubmitted ? (
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
@@ -42,7 +42,7 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">
+              <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
                 Name
               </label>
               <input
@@ -52,13 +52,13 @@ const ContactForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl bg-background border border-card-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
-                placeholder=""
+                className="w-full px-5 py-4 rounded-xl bg-background/50 focus:bg-background border border-card-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-300 text-foreground"
+                placeholder="John Doe"
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
+              <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
                 Email
               </label>
               <input
@@ -68,13 +68,13 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl bg-background border border-card-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
-                placeholder=""
+                className="w-full px-5 py-4 rounded-xl bg-background/50 focus:bg-background border border-card-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-300 text-foreground"
+                placeholder="john@example.com"
               />
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">
+              <label htmlFor="message" className="block text-sm font-semibold text-foreground mb-2">
                 Message
               </label>
               <textarea
@@ -84,7 +84,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
                 rows="5"
-                className="w-full px-4 py-3 rounded-xl bg-background border border-card-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground resize-none"
+                className="w-full px-5 py-4 rounded-xl bg-background/50 focus:bg-background border border-card-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-300 text-foreground resize-none"
                 placeholder="How can I help you?"
               ></textarea>
             </div>
@@ -93,8 +93,8 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full flex items-center justify-center px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 shadow-lg ${
-              isSubmitting ? 'bg-primary/70 cursor-not-allowed' : 'bg-primary hover:bg-accent hover:-translate-y-1 shadow-primary/30'
+            className={`w-full flex items-center justify-center px-8 py-4 rounded-xl text-white font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(var(--color-primary-rgb),0.3)] ${
+              isSubmitting ? 'bg-primary/70 cursor-not-allowed' : 'bg-primary hover:bg-accent hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.5)]'
             }`}
           >
             {isSubmitting ? (

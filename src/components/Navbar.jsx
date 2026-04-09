@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useState } from 'react';
@@ -6,6 +6,18 @@ import { useState } from 'react';
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e, path) => {
+    if (location.pathname === '/' && path !== '/') {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent("driveCar", { detail: path }));
+      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+    } else if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -20,8 +32,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <NavLink to="/" className="text-xl font-bold text-primary tracking-tight">
+          <div className="flex-shrink-0 flex items-center group">
+            <NavLink to="/" className="text-2xl font-display font-bold text-primary tracking-tight transition-transform group-hover:scale-105 duration-300">
               Laraib<span className="text-foreground">.dev</span>
             </NavLink>
           </div>
@@ -32,9 +44,12 @@ const Navbar = () => {
               <NavLink
                 key={link.name}
                 to={link.path}
+                onClick={(e) => handleNavClick(e, link.path)}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors hover:text-primary ${
-                    isActive ? 'text-primary border-b-2 border-primary' : 'text-secondary'
+                  `relative text-sm font-semibold transition-all duration-300 hover:text-primary ${
+                    isActive ? 'text-primary' : 'text-secondary'
+                  } before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all before:duration-300 hover:before:w-full ${
+                    isActive ? 'before:w-full' : ''
                   }`
                 }
               >
@@ -77,7 +92,7 @@ const Navbar = () => {
               <NavLink
                 key={link.name}
                 to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.path)}
                 className={({ isActive }) =>
                   `block px-3 py-2 rounded-md text-base font-medium ${
                     isActive ? 'bg-primary/10 text-primary' : 'text-secondary hover:bg-card-border hover:text-foreground'

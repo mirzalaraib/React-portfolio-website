@@ -2,6 +2,7 @@ import { portfolioData } from '../data/portfolioData';
 import { AnimatedPage } from '../components/AnimatedPage';
 import { FileText, Award, GraduationCap } from 'lucide-react';
 import SkillCard from '../components/SkillCard';
+import { motion } from 'framer-motion';
 
 const About = () => {
   const { personalInfo, skills, certifications, education } = portfolioData;
@@ -19,9 +20,14 @@ const About = () => {
       <div className="max-w-5xl mx-auto space-y-16">
         
         {/* About Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
-            <span className="w-8 h-1 bg-primary mr-4 rounded-full"></span>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8 flex items-center">
+            <span className="w-12 h-1 bg-gradient-to-r from-primary to-accent mr-4 rounded-full"></span>
             About Me
           </h2>
           <div className="bg-card border border-card-border rounded-2xl p-8 shadow-sm">
@@ -49,12 +55,17 @@ const About = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Skills Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
-            <span className="w-8 h-1 bg-primary mr-4 rounded-full"></span>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8 flex items-center">
+            <span className="w-12 h-1 bg-gradient-to-r from-primary to-accent mr-4 rounded-full"></span>
             Technical Skills
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -62,12 +73,17 @@ const About = () => {
               <SkillCard key={idx} title={category.title} skills={category.items} />
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Education Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
-            <span className="w-8 h-1 bg-primary mr-4 rounded-full"></span>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8 flex items-center">
+            <span className="w-12 h-1 bg-gradient-to-r from-primary to-accent mr-4 rounded-full"></span>
             Education
           </h2>
           <div className="space-y-6">
@@ -90,12 +106,17 @@ const About = () => {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Certifications Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
-            <span className="w-8 h-1 bg-primary mr-4 rounded-full"></span>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8 flex items-center">
+            <span className="w-12 h-1 bg-gradient-to-r from-primary to-accent mr-4 rounded-full"></span>
             Certifications
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -117,7 +138,7 @@ const About = () => {
               </a>
             ))}
           </div>
-        </section>
+        </motion.section>
       </div>
     </AnimatedPage>
   );

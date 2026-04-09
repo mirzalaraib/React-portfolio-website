@@ -4,28 +4,59 @@
 
 @layer base {
   :root {
-    --color-bg: #f8fafc;
-    --color-text: #0f172a;
-    --color-primary: #3b82f6; /* Blue 500 */
-    --color-secondary: #64748b; /* Slate 500 */
-    --color-accent: #2563eb; /* Blue 600 */
+    --color-bg: #fafafa; /* Very light gray */
+    --color-text: #0f172a; /* Slate 900 */
+    --color-primary: #4f46e5; /* Indigo 600 */
+    --color-primary-rgb: 79, 70, 229;
+    --color-secondary: #475569; /* Slate 600 */
+    --color-accent: #6366f1; /* Indigo 500 */
     --color-card: #ffffff;
     --color-card-border: #e2e8f0;
+    --color-ring: #c7d2fe; /* Indigo 200 */
   }
 
   .dark {
-    --color-bg: #0f172a; /* Slate 900 */
+    --color-bg: #020617; /* Slate 950 for premium deep dark */
     --color-text: #f8fafc; /* Slate 50 */
-    --color-primary: #3b82f6;
+    --color-primary: #818cf8; /* Indigo 400 */
+    --color-primary-rgb: 129, 140, 248;
     --color-secondary: #94a3b8; /* Slate 400 */
-    --color-accent: #60a5fa; /* Blue 400 */
-    --color-card: #1e293b; /* Slate 800 */
-    --color-card-border: #334155;
+    --color-accent: #6366f1; /* Indigo 500 */
+    --color-card: #0f172a; /* Slate 900 */
+    --color-card-border: #1e293b; /* Slate 800 */
+    --color-ring: #3730a3; /* Indigo 800 */
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply bg-background text-foreground transition-colors duration-500 antialiased;
+    background-image: radial-gradient(circle at top right, rgba(var(--color-primary-rgb), 0.05) 0%, transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(var(--color-primary-rgb), 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: rgba(var(--color-primary-rgb), 0.3);
+    color: var(--color-primary);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 4s ease infinite;
+  }
+
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 }
 

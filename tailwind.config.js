@@ -15,9 +15,15 @@ export default {
         accent: 'var(--color-accent)',
         card: 'var(--color-card)',
         'card-border': 'var(--color-card-border)',
+        'ring': 'var(--color-ring)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        display: ['Outfit', 'sans-serif'],
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(var(--color-primary-rgb), 0.35)',
+        'glow-lg': '0 0 30px rgba(var(--color-primary-rgb), 0.5)',
       }
     },
   },
